@@ -60,9 +60,9 @@
 }
 
  .conteudo > div{
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 300px;
+    flex-grow: 1; /*age no tamanho do crescimento*/
+    flex-shrink: 1; /*age no tamanho de encolhimento*/
+    flex-basis: 300px; /*base para manter esse tamanho pré definido, caso não consiga manter ele ira agir no crescimento e encolhimento*/
  }
 
 

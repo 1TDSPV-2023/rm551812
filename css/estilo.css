@@ -4,15 +4,11 @@
     box-sizing: border-box;
 }
 
-.container{
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
+.cabebalho{
+    display:flex;
+    justify-content: space-between;
     align-items: center;
-    
+    flex-wrap: wrap;
+    background-color: #000;
 }
 
-.conteudo{
-    margin: 10% 0;
-}

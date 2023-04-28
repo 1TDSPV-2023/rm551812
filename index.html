@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo Gitpages</title>
     <link rel="stylesheet" href="./css/estilo.css">
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js" defer></script>
+
+    <!-- ****defer = travar o js ler o html depois destravar o js -->
 
     <!-- <script>
         var nr1 = 10;
@@ -35,7 +37,7 @@
 
     <header class="cabecalho">
         <img src="./img/logo.png" alt="Monitor de computador.">
-        <nav>
+        <nav id="menu">
             <a href="#">Item-1</a>
             <a href="#">Item-2</a>
             <a href="#">Item-3</a>

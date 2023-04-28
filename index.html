@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo Gitpages</title>
     <link rel="stylesheet" href="./css/estilo.css">
+    <script src="./js/script.js"></script>
 </head>
 
-<body>
+<body onload="">
 
     <header class="cabecalho">
         <img src="./img/logo.png" alt="Monitor de computador.">
@@ -21,6 +22,12 @@
     </header>
 
     <h2 class="tit-sec">Seção Foto</h2>
+
+    <div>
+        <button name="esqueci" onclick="alert(document.querySelector('.conteudo img'))">Click</button>
+    </div>
+    <!-- ths.innerHTML : serve para puxar o nome do elemento que está no HTML -->
+    <!-- this.name : serve para exibir o name da tag -->
 
     <section class="conteudo">
         <div>
@@ -68,7 +75,7 @@
 
         -->
 
-            <form action="/action-fake.html" method="get" onsubmit="return true">
+            <form action="/action-fake.html" method="post" onsubmit="return true">
                 <fieldset>
                     <div>
                         <label for="idNm">Nome</label>
@@ -88,6 +95,28 @@
         </div>
 
     </footer>
+
+    <script>
+        // Declaração de variaveis com a palavra var
+        var nr1 = 10;
+        //Exibir no console deve usar console.log
+        console.log(nr1);
+        //Somar
+        var nr2 = 10;
+        console.log('Soma 10+10 = '+ nr1+nr2);
+
+        const botoes = document.querySelectorAll("button");
+
+        botoes.forEach( (botao)=>{
+            if(botao.textContent == "CLICK"){
+                botao.addEventListener("click", ()=>{
+                    alert("oii");
+                })
+            }
+        });
+
+
+    </script>
 
 </body>
 

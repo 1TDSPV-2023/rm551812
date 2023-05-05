@@ -185,3 +185,8 @@
 // });
 
 
+const inputUser = document.querySelector("#idUser");
+
+inputUser.addEventListener("focus", ()=> {
+    inputUser.setAttribute("style","outline-color: #ff0000;")
+});

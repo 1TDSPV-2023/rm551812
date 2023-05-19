@@ -121,35 +121,69 @@ addEventListener('click', (evento)=>{
        }
 
     }
+
+    //USUARIO QUE REPRESENTA OS DADOS QUE CHEGAM DO FORMULÁRIO
+    const usuarioLogado = {
+        nomeUsuarioLogado : userInput.value,
+        senhaUsuarioLogado: passInput.value
+    };
+    
+    //USUARIO QUE VAI REPRESENTAR OS DADOS VALIDADOS
+    let usuarioValidado = {};
+    
+  
+
       // MOSTRAR SENHA
 
-    let listaDeUsuariosRecuperados = JSON.parse(localStorage.getItem("listaUser"));
+    let listaDeUsuariosRecuperados = JSON.parse(localStorage.getItem("listaUser")); //RECFUPERAÇÃO DA LISTA DO LOCALSTORAGE
     
     //console.log(evento.target);
     if(evento.target.id == "btnSubmit"){
 
-            try 
-            {
-                    listaDeUsuariosRecuperados.forEach((usuario)=>{  
-                        if(userInput.value == usuario.nomeUsuario && passInput.value == usuario.senhaUsuario){
-                            throw "foi";
+        try 
+        {
+            listaDeUsuariosRecuperados.forEach((usuario)=>{  
+                if(usuarioLogado.nomeUsuarioLogado == usuario.nomeUsuario && passInput.value == usuario.senhaUsuario){
+
+                    usuarioValidado = usuario;
+                    throw "foi";
                     
-                        }
-                    });
+                }
+            });
 
-                throw "não foi";
-            }
+            throw "não foi";
+        }
+        catch (msg) 
+        {
+            const msgStatus = document.querySelector("#info");
 
-            catch (msg) 
-            {
-                if(msg == "foi"){
-                    console.log("foi");
+            if(msg == "foi"){
+                console.log("foi");
+                window.location.href = "../sucesso.html";
+
+                msgStatus.setAttribute("style", "color:#00ff00;");
+                msgStatus.innerHTML = `<span><strong>O usuário ${usuarioValidado.nomeCompleto} realizou o login com SUCESSO!</strong></span>`;
+
+                //Adicionar o objeto USUÁRIO-VALIDADO no LOCAL-STORAGE
+                localStorage.setItem("user-validado", JSON.stringify(usuarioValidado));
+
+
+                //CRIANDO A AUTENTICAÇÃO
+                let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
+                alert(token);
+
+                localStorage.setItem("user-token", token);
+
+                setTimeout(()=>{
                     window.location.href = "../sucesso.html";
-                }
-                else{
-                    console.log("não foi");
-                }
+                },3000);
             }
+            else{
+                console.log("não foi");
+                msgStatus.setAttribute("style", "color:#ff0000;");
+                msgStatus.innerHTML = `<span><strong>Login ou Usuario INCORRETOS!</strong></span>`;
+            }
+        }
         
         
     }

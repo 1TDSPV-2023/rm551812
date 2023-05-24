@@ -1,23 +1,33 @@
 "use strict"; //Serve para retringir algumas ações do coódigo
 
 
+//Adicionando um atributo a cada objeto sendo eles:
+//avatarUsuario
+//Este atributo deve conter a URL da imagem de avatar do usuario 
+
+
+
+
 // LISTA DE USUARIOS
 
 let listaDeUsuarios = [
     {
         nomeCompleto : "JACINTO",
         nomeUsuario : "JA",
-        senhaUsuario : "123"
+        senhaUsuario : "123",
+        avatarUsuario : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX4wVGjMQ37PaO4PdUVEAliSLi8-c2gJ1zvQ&usqp=CAU"
     },
     {
         nomeCompleto : "JACINTO2",
         nomeUsuario : "JA2",
-        senhaUsuario : "123"
+        senhaUsuario : "123",
+        avatarUsuario : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgYpOOYgMxD_FO9y7jYv2F_DwMnnVMBj8rWQ&usqp=CAU"
     },
     {
         nomeCompleto : "JACINTO3",
         nomeUsuario : "JA3",
-        senhaUsuario : "123"
+        senhaUsuario : "123",
+        avatarUsuario : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6A4QbtWpDKfwFiLvHdQrYGCziccVuVAxtpQ&usqp=CAU"
     }
 ];
 
@@ -125,7 +135,7 @@ addEventListener('click', (evento)=>{
     //USUARIO QUE REPRESENTA OS DADOS QUE CHEGAM DO FORMULÁRIO
     const usuarioLogado = {
         nomeUsuarioLogado : userInput.value,
-        senhaUsuarioLogado: passInput.value
+        senhaUsuarioLogado: passInput.value,
     };
     
     //USUARIO QUE VAI REPRESENTAR OS DADOS VALIDADOS
